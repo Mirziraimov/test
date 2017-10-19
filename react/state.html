@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>state React.js</title>
+	<script src="react.js"></script>
+	<script src="react-DOM.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="state"></div>
+	<script type="text/babel">
+		var State = React.createClass({
+			getInitialState: function(){
+				return {checked: true}
+			},
+			handleCheck: function(){
+				this.setState({checked:!this.state.checked});
+			},
+			render: function(){
+				var message;
+				if(this.state.checked){
+					message = "Выбаран";
+				}
+				else{
+					message = "Не выбран";
+				}
+				return (
+					<div>
+						<input type="checkbox" onChage={this.handleCheck} defaultChecked={this.state.checked}/>
+						<p>{message}</p>
+					</div>
+				); 
+			}
+		});
+		const state = document.getElementById("state");
+		ReactDOM.render(<State/>,state);
+	</script>
+</body>
+</html>
