@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>{{message}}</p>
+		<input type="text" v-model="message"/>
+	</div>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				message: "Hello "
+			}
+			//Для наглядного примера, попробуйте добавить в консоли app.todos.push({text: "Что-то"})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<P>{{message}}</p>
+		<button v-on:click="reverseMessage">Обратить порядок букв в сообщении</button>
+	</div>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				message: "Hello Vue.js!"
+			},
+			methods: {
+				reverseMessage: function(){
+					this.message = this.message.split('').reverse('').join('')
+				}
+			}
+			//Для наглядного примера, попробуйте добавить в консоли app.todos.push({text: "Что-то"})
+		});
+	</script>
+</body>
+</html>

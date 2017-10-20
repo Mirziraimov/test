@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span v-if="seen">Сейчас меня видно</span>
+	</div>
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				seen: true
+			}
+		});
+		/*Для проверки нужно указать в консоли app.seen = false, true*/
+	</script>
+</body>
+</html>
